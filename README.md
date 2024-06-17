@@ -5,23 +5,28 @@
 
 # Introduction 
 
-1. this is the fork version of [darryncampbell/darryncampbell-cordova-plugin-intent](https://github.com/darryncampbell/darryncampbell-cordova-plugin-intent) that fixed some issues or added some new features to the forked repo.
+1. this is a forked intent plugin of **cordova** framework of [darryncampbell/darryncampbell-cordova-plugin-intent](https://github.com/darryncampbell/darryncampbell-cordova-plugin-intent) that fixed some issues or added some new features to the forked repo. if you are looking for a **capacitor** plugin see [IT-MikeS/capacitor-intents: Simple intent tools for Capacitor on Android platform.](https://github.com/IT-MikeS/capacitor-intents)
 2. fixed issues
    1. this plugin convert NFC info in `intent.extras` field into proper format.
 3. added features
 
-# Android X support
+# Support
+
+## Android X support
 
 - For Android X Support please use version >= [2.x.x](https://www.npmjs.com/package/com-darryncampbell-cordova-plugin-intent/v/2.0.0) 
 - For Android Support Library please use version [1.3.x](https://www.npmjs.com/package/com-darryncampbell-cordova-plugin-intent/v/1.3.0)
 
-# Interaction with Camera Plugin
+## Interaction with Camera Plugin
+
 If you are installing this plugin along with cordova-plugin-camera you **MUST install cordova-plugin-camera first.**
 
-# Overview
+# Usage
+
 This Cordova plugin provides a general purpose shim layer for the Android intent mechanism, exposing various ways to handle sending and receiving intents.
 
 ## Credits
+
 This project uses code released under the following MIT projects:
 - https://github.com/napolitano/cordova-plugin-intent (marked as no longer maintained)
 - https://github.com/Initsogar/cordova-webintent.git (no longer available on github but the project is forked here: https://github.com/darryncampbell/cordova-webintent)

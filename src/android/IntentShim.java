@@ -46,7 +46,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import static android.os.Environment.getExternalStorageDirectory;
 import static android.os.Environment.getExternalStorageState;
 
 public class IntentShim extends CordovaPlugin {
@@ -725,13 +724,20 @@ public class IntentShim extends CordovaPlugin {
             }
 
             intentJSON.put("type", intent.getType());
-            intentJSON.put("extras", toJsonObject(intent.getExtras()));
             intentJSON.put("action", intent.getAction());
             intentJSON.put("categories", intent.getCategories());
             intentJSON.put("flags", intent.getFlags());
             intentJSON.put("component", intent.getComponent());
             intentJSON.put("data", intent.getData());
             intentJSON.put("package", intent.getPackage());
+
+            if (NfcUtil.hasNdefExtra(intent)) {
+                Log.d(LOG_TAG, "receive NFC NDEF intent");
+                intentJSON.put("extras", NfcUtil.getNdefJsonObject(intent));
+            } else {
+                Log.d(LOG_TAG, "get normal intent");
+                intentJSON.put("extras", toJsonObject(intent.getExtras()));
+            }
 
             return intentJSON;
         } catch (JSONException e) {
